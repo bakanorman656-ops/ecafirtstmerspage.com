@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECWA Central Area Abuja</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:#f5f7fa;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#002147;
+    color:white;
+}
+
+nav h1{
+    margin:0;
+    font-size:22px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1507692049790-de58290a4334');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h2{
+    font-size:48px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:#f9a825;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* SECTION */
+section{
+    padding:60px 40px;
+    text-align:center;
+}
+
+.about{
+    background:white;
+}
+
+.about h2{
+    color:#002147;
+}
+
+/* FORM */
+.form-section{
+    background:#eef2f7;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button.submit-btn{
+    background:#002147;
+    color:white;
+    border:none;
+    padding:12px;
+    cursor:pointer;
+}
+
+/* MAP */
+.map{
+    width:100%;
+    height:400px;
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* FOOTER */
+footer{
+    background:#002147;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+.social-icons i{
+    margin:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* HOVER */
+.social-icons i:hover{
+    color:#f9a825;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>ECWA Abuja</h1>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#form">First Timers</a></li>
+        <li><a href="#map">Location</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <div>
+        <h2>Welcome to ECWA Central Area Abuja</h2>
+        <p>A place of worship, love, and transformation</p>
+        <button onclick="scrollToForm()">I'm New Here</button>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+        ECWA Central Area Abuja is a vibrant church committed to spreading the Gospel,
+        building strong believers, and transforming lives through Christ.
+        We are a welcoming family where everyone can grow spiritually and connect deeply.
+    </p>
+</section>
+
+<!-- FIRST TIMERS FORM -->
+<section id="form" class="form-section">
+    <h2>First Timer Inquiry</h2>
+    <p>We would love to connect with you!</p>
+
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <textarea rows="4" placeholder="Tell us about your visit"></textarea>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+
+    <p id="successMsg" style="color:green; display:none;">Thank you! We will contact you soon.</p>
+</section>
+
+<!-- MAP -->
+<section id="map">
+    <h2>Find Us</h2>
+    <div class="map">
+        <iframe 
+        src="https://www.google.com/maps?q=Central+Area+Abuja&output=embed">
+        </iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Connect With Us</h3>
+
+    <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+    </div>
+
+    <p>&copy; 2026 ECWA Central Area Abuja | All Rights Reserved</p>
+</footer>
+
+<script>
+function scrollToForm(){
+    document.getElementById("form").scrollIntoView({behavior:"smooth"});
+}
+
+function submitForm(e){
+    e.preventDefault();
+    document.getElementById("successMsg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
